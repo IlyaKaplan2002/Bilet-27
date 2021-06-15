@@ -1,8 +1,17 @@
-#Написати програму, яка читає текстовий файл, що може містити будь-якісимволи, та 
-#рахує, скільки разів там зустрічається кожен з символів u, v таw.
-#Результат видає у вигляді 2u 5v 0w.
-
-filename = input()
+filename = input() #get filename
+if not filename:
+    filename = "data/third_task.data.txt"  #adding default value, just in case
 with open(filename, "r") as file:
-    data = file.readlines()
-print(data)
+    data = file.readlines() #Open and read file
+counter_u = 0 #create counters for letters
+counter_v = 0
+counter_w = 0
+
+for string in data:
+    for char in string: #parsing file data per letter
+        if char == "u":  #check conditions and count u, v and w
+            counter_u += 1
+        elif char == "v":
+            counter_v += 1
+        elif char == "w":
+            counter_w += 1
