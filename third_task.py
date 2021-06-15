@@ -1,4 +1,4 @@
-filename = input() #get filename
+filename = input("Enter filename: ") #get filename
 if not filename:
     filename = "data/third_task.data.txt"  #adding default value, just in case
 with open(filename, "r") as file:
@@ -15,3 +15,5 @@ for string in data:
             counter_v += 1
         elif char == "w":
             counter_w += 1
+
+print(f"{counter_u}u {counter_v}v {counter_w}w")  #finally print answer
